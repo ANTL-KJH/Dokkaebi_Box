@@ -41,8 +41,6 @@ def main():
     servo = ServoMotor(SERVO_DEFAULT_PIN)
     while True:
         servo.setAngle(0, 2)
-        print("set Servo 0")
-        servo.setAngle(90, 2)
-        print("set Servo 90")
+        servo.setAngle(100, 2)
 if __name__ == "__main__":
     main()
