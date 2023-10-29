@@ -32,15 +32,12 @@ class ServoMotor:
         self.pwm.ChangeDutyCycle(duty)  # 보통 2~12 사이의 값을 입력하면됨
         time.sleep(t)  # 서보모터가 이동할만큼의 충분한 시간을 입력. 너무 작은 값을 입력하면 이동하다가 멈춤
 
-        # 아래 두줄로 깨끗하게 정리해줘야 다음번 실행할때 런타임 에러가 안남
-        #self.pwm.stop()
-        #GPIO.cleanup(pin)
 
 
 def main():
     servo = ServoMotor(SERVO_DEFAULT_PIN)
     while True:
-        servo.setAngle(0, 2)
-        servo.setAngle(100, 2)
+        servo.setAngle(0, 2) # 0도
+        servo.setAngle(100, 2)  # 90도
 if __name__ == "__main__":
     main()
