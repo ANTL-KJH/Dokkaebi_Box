@@ -13,7 +13,7 @@
 import RPi.GPIO as GPIO
 import time
 from ServoConstant import *
-
+GPIO.setwarnings(False)
 class ServoMotor:
     def __init__(self, pin):
         self.pin = pin
