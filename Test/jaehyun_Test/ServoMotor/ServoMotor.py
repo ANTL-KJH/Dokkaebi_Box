@@ -42,7 +42,7 @@ def main():
     while True:
         servo.setAngle(0, 2)
         print("set Servo 0")
-        servo.setAngle(80, 2)
+        servo.setAngle(90, 2)
         print("set Servo 90")
 if __name__ == "__main__":
     main()
