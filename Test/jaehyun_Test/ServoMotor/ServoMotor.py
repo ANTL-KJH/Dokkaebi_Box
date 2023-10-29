@@ -27,7 +27,7 @@ class ServoMotor:
         time.sleep(1)       # 초기 시작값으로 이동하고 싶지 않으면 이 라인을 삭제하면 된다.
 
     def setAngle(self, degree, t):   # 각도와 움직일 시간 입력
-        duty = SERVO_MIN_DUTY + ((degree * (SERVO_MAX_DUTY - SERVO_MIN_DUTY) / 180.0))*1.1 # 1.1은 서보모터 특성에 따른 보정값
+        duty = SERVO_MIN_DUTY + ((degree * (SERVO_MAX_DUTY - SERVO_MIN_DUTY) / 180.0))*1.15 # 1.1은 서보모터 특성에 따른 보정값
         self.pwm.ChangeDutyCycle(duty)  # 보통 2~12 사이의 값을 입력하면됨
         time.sleep(t)  # 서보모터가 이동할만큼의 충분한 시간을 입력. 너무 작은 값을 입력하면 이동하다가 멈춤
 
