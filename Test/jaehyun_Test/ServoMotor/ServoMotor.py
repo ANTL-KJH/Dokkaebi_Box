@@ -33,10 +33,10 @@ class ServoMotor:
 
 
 def main():
-    ServoMotor(16)
+    servo = ServoMotor(SERVO_DEFAULT_PIN)
     while True:
-        ServoMotor.setAngle(90, 2)
-        ServoMotor.setAngle(180, 2)
+        servo.setAngle(90, 2)
+        servo.setAngle(180, 2)
 
 if __name__ == "__main__":
     main()
