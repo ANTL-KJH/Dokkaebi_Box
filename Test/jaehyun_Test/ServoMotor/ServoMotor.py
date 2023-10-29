@@ -24,7 +24,7 @@ class ServoMotor:
         GPIO.setmode(GPIO.BOARD)  # 핀의 번호를 보드 기준으로 설정, BCM은 GPIO 번호로 호출함
         GPIO.setup(pin, GPIO.OUT)  # GPIO 통신할 핀 설정
         self.pwm = GPIO.PWM(self.pin, SERVO_DEFAULT_FREQ)  # 서보모터는 PWM을 이용해야됨. 16번핀을 50Hz 주기로 설정
-        self.pwm.start(0)  # 초기 시작값, 반드시 입력해야됨
+        self.pwm.start(5)  # 초기 시작값, 반드시 입력해야됨
         time.sleep(1)  # 초기 시작값으로 이동하고 싶지 않으면 이 라인을 삭제하면 된다.
 
     def setAngle(self, degree, t):   # 각도와 움직일 시간 입력
@@ -40,9 +40,9 @@ class ServoMotor:
 def main():
     servo = ServoMotor(SERVO_DEFAULT_PIN)
     while True:
-        servo.setAngle(0, 2)
+        servo.setAngle(5, 2)
         print("set Servo 0")
-        servo.setAngle(90, 2)
+        servo.setAngle(100, 2)
         print("set Servo 90")
 if __name__ == "__main__":
     main()
